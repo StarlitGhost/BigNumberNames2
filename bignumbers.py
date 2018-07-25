@@ -116,10 +116,10 @@ def get_powers(n):
   # find out how much of each power of 1000 fits into n
   q = n
   for i in range(len(powers)):
-    num_that_fit = q / a
+    num_that_fit = q // a
     powers[i] = num_that_fit
     q = q % a
-    a /= 1000
+    a //= 1000
 
   return powers
 
@@ -146,11 +146,11 @@ def get_name(n):
 
   # find the number of hundreds, tens and ones that fit into n & get the appropriate name
   q = n
-  n_hundreds = q / 100
+  n_hundreds = q // 100
   hundreds = hundreds_names[n_hundreds] if n_hundreds > 0 else ""
 
   q %= 100
-  n_tens = q / 10
+  n_tens = q // 10
   tens = tens_names[n_tens] if n_tens > 0 else ""
 
   n_ones = q % 10
@@ -182,7 +182,7 @@ def bignumexp(n):
   """
   Returns the english name of any nth power of 10 (10^n) up to infinity
   """
-  q = (n - 3)/3
+  q = (n - 3)//3
 
   # if q is 999 or less, don't need to combine names with illi
   if q <= 999:
@@ -264,7 +264,7 @@ def small2eng(num):
         hundred = get_num(num[0]) + ' hundred'
         num = num[1:]
         n, num = norm_num(num)
-    if (n > 20) and (n != (n / 10 * 10)): # Got ones
+    if (n > 20) and (n != (n // 10 * 10)): # Got ones
         tens = get_num(num[0] + '0')
         ones = get_num(num[1])
         ten = tens + ' ' + ones
