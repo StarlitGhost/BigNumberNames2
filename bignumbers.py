@@ -315,6 +315,6 @@ def print_number(n_str):
 
 
 if __name__ == "__main__":
-  print "The english name for 7823479018273487912534987162938476182734589127364981273649812734689 is"
-  print print_number("7823479018273487912534987162938476182734589127364981273649812734689")
+  roll = print_number("{}".format(input()))
+  print(roll)
 
