@@ -315,6 +315,9 @@ def print_number(n_str):
 
 
 if __name__ == "__main__":
-  roll = print_number("{}".format(input()))
-  print(roll)
-
+  try:
+    num = "{}".format(input())
+    num_in_words = print_number(num)
+  except ValueError:
+    print("{!r} was not recognized as an integer".format(num))
+  print(num_in_words)
