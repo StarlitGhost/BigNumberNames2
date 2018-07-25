@@ -318,6 +318,6 @@ if __name__ == "__main__":
   try:
     num = "{}".format(input())
     num_in_words = print_number(num)
+    print(num_in_words)
   except ValueError:
     print("{!r} was not recognized as an integer".format(num))
-  print(num_in_words)
